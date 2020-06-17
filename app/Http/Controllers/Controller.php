@@ -23,7 +23,7 @@ class Controller extends BaseController
 	public function deconnecter()
 	{
 		\Session::forget('matricule');	
-		\Session::forget('bureaux');		
+		\Session::forget('bureaux');				
 		\Auth::logout();
 		return \Redirect::to('/')->with('message','Vous venez de vous déconnecter');
 	}

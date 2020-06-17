@@ -51,7 +51,7 @@
         <div class="form-group row my-3">
           <div class="col-sm-4"></div>
           <div class="col-sm-3 ml-4">
-            <button type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;">Editer</button>
+            <button OnClick="window.document.forms[0].target='_blank';" type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;">Editer</button>
           </div>
         </div>
       </form>

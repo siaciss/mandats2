@@ -111,5 +111,6 @@
     </div>   
   </div>
 </div>
+<?php \Session::put('data',null) ?>
   @endif
 @endsection

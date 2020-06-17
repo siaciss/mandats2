@@ -49,20 +49,20 @@
           </li>
 
           <li class="nav-item">
-            <a target="_blank" class="nav-link" href="{{ URL::action('ControllerPayer@getPayer2') }}">Effectuer payement</a>
+            <a class="nav-link" href="{{ URL::action('ControllerPayer@getPayer2') }}">Effectuer payement</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="{{ URL::action('ControllerPayer@getAnnuler') }}">Annuler payement</a>
           </li>
           <li class="nav-item dropdown">
-            <a target="_blank" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             Rapports  </a>
             <div class="dropdown-menu">
               <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerAgent@rapportja') }}">Mon Rapport Journalier</a>
-              <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerAgent@getRapport2_1') }}">Mon Rapport Periodique</a>
+              <a class="dropdown-item" href="{{ URL::action('ControllerAgent@getRapport2_1') }}">Mon Rapport Periodique</a>
               <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerChefAgence@rapportjAgence') }}">Rapport Journalier Agence</a>
-              <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerChefAgence@getRapportPAgence') }}">Rapport Periodique Agence</a>
+              <a class="dropdown-item" href="{{ URL::action('ControllerChefAgence@getRapportPAgence') }}">Rapport Periodique Agence</a>
             </div>
           </li>
         </ul>

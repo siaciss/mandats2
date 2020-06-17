@@ -34,7 +34,7 @@ class ControllerPayer extends Controller
 	public function getAnnuler()
 	{
 		$m=\Session::get('matricule');
-		if ($m) {
+		if ($m) {			
 			return view('annuler');
 		}
 		else {

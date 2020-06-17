@@ -80,11 +80,11 @@ class ControllerAjoutUser extends Controller
     'bureau' => 'required',
   ]);
 
-     $b=request('bureau');
+   $b=request('bureau');
 
    try {
      $numB = DB::table('bureaus')->select('numBureau')->where('adresse',$b)->first();
-    } 
+   } 
    catch (\Illuminate\Database\QueryException $ex) {
      return back()->with('erreurDB',$ex->getMessage());
    }
@@ -145,31 +145,42 @@ class ControllerAjoutUser extends Controller
   }
 }
 
- public function postNewMDP(Request $request){
+public function postNewMDP(Request $request){
   $m=\Session::get('matricule');
   if ($m) {
     $this->validate($request, [
       'newMdp' => 'required|min:4',
+      'oldMdp' => 'required|min:4',
       'confirm' => 'required|same:newMdp',
     ]);
 
     $mdp = request('newMdp');
+    $old = request('oldMdp');
 
-    $user = DB::table('users')->select('matricule')->where('matricule',$m)->first();
+    $user = DB::table('users')->select('matricule','password')->where('matricule',$m)->first();
 
     if (empty($user)) {
-    return \Redirect::to('/')->with('erreurDB','Veillez vous connectez');
+      return \Redirect::to('/')->with('erreurDB','Veillez vous connectez');
     }
     else{
-      try{
-        \App\User::where('matricule',$m)
-        ->update(['password' => $mdp]);
+      #dd($user);
+
+      if ($user->password == $old) {    
+
+        try{
+          \App\User::where('matricule',$m)
+          ->update(['password' => $mdp]);
+        }
+        catch(\Illuminate\Database\QueryException $ex)
+        { 
+          return back()->with('erreurDB',$ex->getMessage()); 
+        }
+        return back()->with('success','Votre Mot de passe est changé');
       }
-      catch(\Illuminate\Database\QueryException $ex)
-      { 
-        return back()->with('erreurDB',$ex->getMessage()); 
+      else
+      {
+        return back()->with('erreurDB','Votre ancien mot de passe est incorrect');
       }
-      return back()->with('success','Votre Mot de passe est changé');
     }
   }
   else {

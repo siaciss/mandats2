@@ -1,3 +1,7 @@
+<script type="text/javascript">
+  window.open();
+</script>
+
 </br>
 </br>
 </br>
@@ -57,7 +61,9 @@
       <div class="form-group row">
         <div class="col-sm-5"></div>
         <div class="col-sm-3">
-          <button type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;"><a target="_blank" > Payer </a> </button>
+          <a href="#" target="_blank">Open in a new tab</a>
+            <button OnClick="window.document.forms[0].target='_blank';" type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;"> 
+             Payer</button> 
         </div>
       </div>
     </form>
@@ -95,4 +101,5 @@
     </div>   
   </div>
 </div>
+<?php \Session::put('success',null); ?>
 @endif

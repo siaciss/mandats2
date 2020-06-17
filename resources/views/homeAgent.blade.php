@@ -53,15 +53,15 @@ a {
           </li>
 
           <li class="nav-item">
-            <a target="_blank" class="nav-link" href="{{ URL::action('ControllerPayer@getPayer') }}">Effectuer payement</a>
+            <a class="nav-link" href="{{ URL::action('ControllerPayer@getPayer') }}">Effectuer payement</a>
           </li>        
 
           <li class="nav-item dropdown">
-            <a target="_blank" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             Rapports  </a>
             <div class="dropdown-menu">
               <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerAgent@rapportja') }}">Rapport Journalier</a>
-              <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerAgent@getRapport2') }}">Rapport Periodique</a>
+              <a class="dropdown-item" href="{{ URL::action('ControllerAgent@getRapport2') }}">Rapport Periodique</a>
             </div>
           </li>
         </ul>            

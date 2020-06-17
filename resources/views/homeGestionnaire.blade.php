@@ -60,9 +60,9 @@
           <div class="dropdown-menu">
             <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerEtatMandats@getRapportImpaye') }}">Rapport des mandats impayés</a>
             <a target="_blank" class="dropdown-item" href="{{ URL::action('Controller@rapportJournalierG') }}">Rapport Payement Journalier</a>
-            <a target="_blank" class="dropdown-item" href="{{ URL::action('Controller@getFormRapportGlobal') }}">Rapport Payement Periodique</a>
+            <a class="dropdown-item" href="{{ URL::action('Controller@getFormRapportGlobal') }}">Rapport Payement Periodique</a>
             <a target="_blank" class="dropdown-item" href="{{ URL::action('Controller@getChoixBureau') }}">Rapport Payement Journalier Par Agence</a>
-            <a target="_blank" class="dropdown-item" href="{{ URL::action('Controller@getChoixBureauP') }}">Rapport Payement Periodique Par Agence</a>
+            <a class="dropdown-item" href="{{ URL::action('Controller@getChoixBureauP') }}">Rapport Payement Periodique Par Agence</a>
             <a target="_blank" class="dropdown-item" href="{{ URL::action('ControllerEtatMandats@getJournalAnnulation') }}">Journal Annulation</a>
           </div>
         </li>

@@ -55,18 +55,33 @@
           </select>
         </div>
       </div>          
-          <div class="form-inline item-center ">
-            <span class="ml-5 mr-4"> Periode Du </span>     
-            <input type="date" class="form-control ml-5 mr-5 " name="date1">
+
+      <div class="form-group row">
+        <label for="inputBuro" class="col-sm-2 col-form-label ml-5">Periode du</label>
+        <div class="col-sm-8">
+          <input type="date" class="form-control  mr-5 " name="date1">
+        </div>
+      </div>   
+
+      <div class="form-group row">
+        <span class="col-sm-2 col-form-label ml-5"> Au </span>  
+        <div class="col-sm-8">
+          <input type="date" class="form-control  mr-5 " name="date2">
+        </div>
+      </div>          
+
+         <!-- <div class="form-inline item-center ">
+            <span class="ml-5"> Periode Du </span>     
+            <input type="date" class="form-control  mr-5 " name="date1">
             <span> au </span>
             <input type="date" class="form-control ml-3 " name="date2">
           </br></br>
-          </div>
+          </div> -->
 
-        <div class="form-group row my-3">
+        <div class="form-group row my-3 mt-5">
           <div class="col-sm-4"></div>
           <div class="col-sm-3 ml-4">
-            <button type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;">Editer</button>
+            <button OnClick="window.document.forms[0].target='_blank';" type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;">Editer</button>
           </div>
         </div>
       </form>

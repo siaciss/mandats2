@@ -63,7 +63,6 @@ class ControllerEtatMandats extends Controller
 	}
 
 	public function getRapportImpaye(){
-					set_time_limit (6000);
 		$m=\Session::get('matricule');
 		if ($m) {
 			try{
@@ -74,6 +73,7 @@ class ControllerEtatMandats extends Controller
 				return back()->with('erreurDB',$ex->getMessage()); 
 			}
 			\Session::put('data',$data);
+			set_time_limit (6000);
 			$pdf = PDF::loadView('rapportImpaye');
 			return $pdf->setPaper('a4')->stream('Impayes.pdf');
 

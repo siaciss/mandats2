@@ -42,18 +42,24 @@
     <form method="POST" class="text-secondary">
           {{csrf_field()}}
           <div class="row">
-          <label for="inputNewMdp" class="col-sm-3 col-form-label">Nouveau</label>
+          <label for="inputAncMdp" class="col-sm-3 ml-5 col-form-label">Ancien</label>
           <div class="form-group col-7">
-            <!-- <input type="range" class="form-control-range mt-5 mb-2" name="range"> -->     
-            <input type="password" class="form-control" name="newMdp" placeholder="donner le mot de passe" required>
+            <input type="password" class="form-control" name="oldMdp" placeholder="ancien mot de passe" required>
           </div>
           </div>
 
           <div class="row">
-          <label for="inputConfirm" class="col-sm-3 col-form-label">Confirmer</label>
+          <label for="inputNewMdp" class="col-sm-3 ml-5 col-form-label">Nouveau</label>
+          <div class="form-group col-7">
+            <input type="password" class="form-control" name="newMdp" placeholder="nouveau mot de passe" required>
+          </div>
+          </div>
+
+          <div class="row">
+          <label for="inputConfirm" class="col-sm-3 ml-5 col-form-label">Confirmer</label>
           <div class="form-group col-7">
             <!-- <input type="range" class="form-control-range mt-5 mb-2" name="range"> Veuillez donner un mot de passe de 4 caractéres au moins -->     
-            <input type="password" class="form-control" name="confirm" placeholder="confirmer le mot de passe" required>
+            <input type="password" class="form-control" name="confirm" placeholder="confirmer le nouveau mot de passe" required>
           </div>
           </div>          
 

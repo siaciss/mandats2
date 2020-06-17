@@ -7,7 +7,7 @@
 	<title>Mon Rapport </title>
 	<link href="css\bootstrap.min.css" rel="stylesheet"/> 
 
-	<link hrel="stylesheet" href="css\style.css">   
+	<link hrel="stylesheet" href="css\style.css">  
 
 </head>
 
