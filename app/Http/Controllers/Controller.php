@@ -17,7 +17,7 @@ class Controller extends BaseController
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 	public function Connect(){
-		return view('connection');
+		return view('index');
 	}
 
 	public function deconnecter()
