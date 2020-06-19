@@ -21,12 +21,12 @@ class CreateJournalannulationsTable extends Migration
             $table->integer('montant');
             $table->string('matAgtPayeur');
             $table->string('matAgtAnnulateur');
-            $table->date('dateEmission')->useCurrent();                       
+            $table->date('dateEmission')->nullable();                       
             $table->date('datePayement'); 
             $table->date('dateAnnulation'); 
             $table->date('heureAnnulation');
             $table->timestamps();
-            $table->primary(['matOrph','dateEmission','dateAnnulation','heureAnnulation'],'pkMandat');
+            $table->primary(['matOrph','dateAnnulation','heureAnnulation'],'pkMandat');
             $table->foreign('matOrph','fkMandat1')->references('matOrph')->on('mandats')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('matAgtPayeur','fkMandat2')->references('matricule')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('matAgtAnnulateur','fkMandat3')->references('matricule')->on('users')->onDelete('cascade')->onUpdate('cascade');

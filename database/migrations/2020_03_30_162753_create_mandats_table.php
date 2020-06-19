@@ -20,9 +20,9 @@ class CreateMandatsTable extends Migration
             $table->string('beneficiaire');
             $table->integer('montant');
             $table->string('etat');    //->check('etat','checkEtat')->in('EMIS','PAYE','EXPIRE'); 
-            $table->string('matAgt');
-            $table->date('dateEmission')->useCurrent();                       
-            $table->date('datePayement');        
+            $table->string('matAgt')->nullable();
+            $table->date('dateEmission');                       
+            $table->date('datePayement')->nullable();        
             $table->timestamps();
             $table->primary(['matOrph','dateEmission'],'pkMandat');
             $table->foreign('matAgt','fkMandat')->references('matricule')->on('users')->onDelete('cascade')->onUpdate('cascade');
