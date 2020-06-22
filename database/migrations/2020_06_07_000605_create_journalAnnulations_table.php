@@ -27,7 +27,7 @@ class CreateJournalannulationsTable extends Migration
             $table->date('heureAnnulation');
             $table->timestamps();
             $table->primary(['matOrph','dateAnnulation','heureAnnulation'],'pkMandat');
-            $table->foreign('matOrph','fkMandat1')->references('matOrph')->on('mandats')->onDelete('cascade')->onUpdate('cascade');
+            #$table->foreign('matOrph','fkMandat1')->references('matOrph')->on('mandats')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('matAgtPayeur','fkMandat2')->references('matricule')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('matAgtAnnulateur','fkMandat3')->references('matricule')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
