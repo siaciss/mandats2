@@ -17,4 +17,6 @@ class bureau extends Model
     protected $fillable = [
         'numBureau','adresse',
     ];
+
+    protected $primaryKey = 'numBureau';
 }
