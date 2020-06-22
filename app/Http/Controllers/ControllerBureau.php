@@ -18,7 +18,7 @@ class ControllerBureau extends Controller
         ]);
 
     	$buro=new \App\bureau;
-    	$buro->numbureau=request('numero');
+    	$buro->numBureau=request('numero');
     	$buro->adresse=request('adresse');
         try{
            $buro->save();
