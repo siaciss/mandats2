@@ -61,7 +61,6 @@
       <div class="form-group row">
         <div class="col-sm-5"></div>
         <div class="col-sm-3">
-          <a href="#" target="_blank">Open in a new tab</a>
             <button OnClick="window.document.forms[0].target='_blank';" type="submit" class="btn btn-sm btn-block btn-secondary" style="border-radius: 21px;"> 
              Payer</button> 
         </div>
