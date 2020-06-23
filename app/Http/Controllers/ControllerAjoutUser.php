@@ -9,15 +9,15 @@ class ControllerAjoutUser extends Controller
 {
     //
   public function getAjoutUser(){
-    $m=\Session::get('matricule');
-    if ($m) {
+    #$m=\Session::get('matricule');
+    #if ($m) {
       $b = DB::table('bureaus')->select('adresse')->get();
       \Session::put('bureaux',$b);
       return view('ajoutUser');
-    }
-    else {
-      return \Redirect::to('/')->with('erreurDB','Veillez vous connectez');
-    }
+    #}
+    #else {
+      #return \Redirect::to('/')->with('erreurDB','Veillez vous connectez');
+    #}
   }
 
   public function getNewProfil(){
