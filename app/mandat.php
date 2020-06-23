@@ -18,7 +18,7 @@ class mandat extends Model
         'matOrph','nomTuteur', 'prenomTuteur', 'beneficiaire','montant','etat', 'matAgt','dateEmission','datePayement',
     ];
 
-    protected $primaryKey = ['matOrph','dateEmission'];
+    #protected $primaryKey = ['matOrph','dateEmission'];
 }
 
 
