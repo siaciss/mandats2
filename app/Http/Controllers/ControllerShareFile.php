@@ -31,9 +31,7 @@ class ControllerShareFile extends Controller
 			'fichier' => 'required|mimes:xlsx,xls',        
 		]);
 
-		require __DIR__ . '/vendor/autoload.php';
-
-// Create new Spreadsheet object
+		
 		$spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
 
 		$pValue  = (int) 100;
