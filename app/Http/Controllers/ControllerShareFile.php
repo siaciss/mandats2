@@ -45,7 +45,6 @@ class ControllerShareFile extends Controller
 					unset($data[$key]);
 				}
 			}
-			//return $data; 
 			foreach ($data as $key => $value) 				
 			{    
 				$mandat = new \App\mandat;
