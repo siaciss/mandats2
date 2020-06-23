@@ -32,10 +32,10 @@ class ControllerShareFile extends Controller
 		]);
 
 		$path=$request->file('fichier')->getRealPath();
-		$data = Excel::load($path)->get();
-				return "je faisais un teste";
+		//$data = Excel::load($path)->get();
 
-		//$data = Excel::load($path)->toArray();
+		$data = Excel::load($path)->toArray();
+				return "je faisais un teste";
 		$d = date('Y-m-d');
 		//return $data;
 
