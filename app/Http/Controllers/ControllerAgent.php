@@ -88,7 +88,7 @@ class ControllerAgent extends Controller
 		dd(abs(strtotime($d1)-strtotime($d2)));*/
 		if ($mat!=0) {			
 			try{
-				$data = DB::table('mandats')->select('matOrph','nomTuteur','prenomTuteur','beneficiaire','etat',DB::raw('SUM(montant) as montant'))->groupBy('matOrph','nomTuteur','prenomTuteur','beneficiaire','etat')->havingRaw('matOrph = ?', [$mat])->get();
+				$data = DB::table('mandats')->select('mandats.matOrph','nomTuteur','prenomTuteur','beneficiaire','etat',DB::raw('SUM(montant) as montant'))->groupBy('matOrph','nomTuteur','prenomTuteur','beneficiaire','etat')->havingRaw('matOrph = ?', [$mat])->get();
 			}
 			catch(\Illuminate\Database\QueryException $ex)
 			{ 
