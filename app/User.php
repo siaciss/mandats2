@@ -28,5 +28,5 @@ class User extends Authenticatable
         'matricule','nom', 'prenom', 'statut', 'numeroBureau','password',
     ];
 
-
+    protected $primaryKey = 'matricule';
 }

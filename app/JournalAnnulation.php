@@ -17,4 +17,6 @@ class Journalannulation extends Model
     protected $fillable = [
         'matOrph','nomTuteur', 'prenomTuteur', 'beneficiaire','montant','matAgtPayeur','matAgtAnnulateur','dateEmission','datePayement','dateAnnulation','heureAnnulation',
     ];
+
+    protected $primaryKey = ['matOrph','dateAnnulation','heureAnnulation'];
 }

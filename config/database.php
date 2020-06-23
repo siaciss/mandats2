@@ -54,6 +54,20 @@ return [
             'engine' => null,
         ],
 
+        /*'mysql' => [
+            'driver' => 'mysql',
+            'host' => 'db4free.net',
+            'port' => '3306',
+            'database' => 'mandatsposte',
+            'username' => 'assietou',
+            'password' =>'4b9b9099',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ], */
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
