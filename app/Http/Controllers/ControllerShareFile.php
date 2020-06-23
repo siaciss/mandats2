@@ -31,6 +31,15 @@ class ControllerShareFile extends Controller
 			'fichier' => 'required|mimes:xlsx,xls',        
 		]);
 
+		require __DIR__ . '/vendor/autoload.php';
+
+// Create new Spreadsheet object
+		$spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+
+		$pValue  = (int) 100;
+		$pCoordination = 'A1';
+		$spreadsheet->getActiveSheet()->setCellValue($pCoordination, $pValue);
+
 		$path=$request->file('fichier')->getRealPath();
 		$data = Excel::load($path)->get();
 		//$data = Excel::load($path)->toArray();
@@ -42,36 +51,36 @@ class ControllerShareFile extends Controller
 			{    
 				if ($value->n == null) {
 					//return $value;
-						unset($data[$key]);
-					}
+					unset($data[$key]);
+				}
 			}
 			//return $data; 
 			foreach ($data as $key => $value) 				
 			{    
-						$mandat = new \App\mandat;
-						$mandat->matOrph = $value->matricule;
-						$mandat->prenomTuteur = $value->prenomtuteur;
-						$mandat->nomTuteur = $value->nomtuteur;
-						$mandat->beneficiaire = $value->orphelin;
-						$mandat->montant = $value->total - 1200;
-						$mandat->etat = 'EMIS';	
-						$mandat->dateEmission = $d;											
+				$mandat = new \App\mandat;
+				$mandat->matOrph = $value->matricule;
+				$mandat->prenomTuteur = $value->prenomtuteur;
+				$mandat->nomTuteur = $value->nomtuteur;
+				$mandat->beneficiaire = $value->orphelin;
+				$mandat->montant = $value->total - 1200;
+				$mandat->etat = 'EMIS';	
+				$mandat->dateEmission = $d;											
 
-					try{										
-						$mandat->save();
-					}
-					catch(\Illuminate\Database\QueryException $ex)
-					{ 
-						return back()->with('erreurDB',$ex->getMessage()); 
-					}
+				try{										
+					$mandat->save();
+				}
+				catch(\Illuminate\Database\QueryException $ex)
+				{ 
+					return back()->with('erreurDB',$ex->getMessage()); 
+				}
 					//}	
 
-				}
-				$c = DB::table('mandats')->select(DB::raw('count(*) as nbMandat, sum(montant) as somm'))->where('dateEmission',$d)->get();	
 			}
-		    if ($c[0]->nbMandat==0) {
-		    	return back()->with('erreurDB','Chargement non effectué, veuillez vérifier le fichier');
-		    }
-			return back()->with('success',$c[0]->nbMandat . ' mandats chargés avec un montant de '. $c[0]->somm . ' Francs Cfa au total' );   	
+			$c = DB::table('mandats')->select(DB::raw('count(*) as nbMandat, sum(montant) as somm'))->where('dateEmission',$d)->get();	
 		}
+		if ($c[0]->nbMandat==0) {
+			return back()->with('erreurDB','Chargement non effectué, veuillez vérifier le fichier');
+		}
+		return back()->with('success',$c[0]->nbMandat . ' mandats chargés avec un montant de '. $c[0]->somm . ' Francs Cfa au total' );   	
 	}
+}
