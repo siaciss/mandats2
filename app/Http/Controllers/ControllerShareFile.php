@@ -31,13 +31,6 @@ class ControllerShareFile extends Controller
 			'fichier' => 'required|mimes:xlsx,xls',        
 		]);
 
-		
-		$spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
-
-		$pValue  = (int) 100;
-		$pCoordination = 'A1';
-		$spreadsheet->getActiveSheet()->setCellValue($pCoordination, $pValue);
-
 		$path=$request->file('fichier')->getRealPath();
 		$data = Excel::load($path)->get();
 		//$data = Excel::load($path)->toArray();
