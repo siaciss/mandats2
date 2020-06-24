@@ -35,7 +35,7 @@ class ControllerShareFile extends Controller
 		//$data = Excel::load($path)->get();
 
 		$data = Excel::load($path)->toArray();
-				return "je faisais un teste";
+				return $data;
 		$d = date('Y-m-d');
 		//return $data;
 
