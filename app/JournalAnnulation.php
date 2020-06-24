@@ -18,5 +18,5 @@ class Journalannulation extends Model
         'matOrph','nomTuteur', 'prenomTuteur', 'beneficiaire','montant','matAgtPayeur','matAgtAnnulateur','dateEmission','datePayement','dateAnnulation','heureAnnulation',
     ];
 
-    protected $primaryKey = ['matOrph','dateAnnulation','heureAnnulation'];
+    //protected $primaryKey = ['matOrph','dateAnnulation','heureAnnulation'];
 }
